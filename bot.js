@@ -55,9 +55,9 @@ client.on('message',async message => {
                   .setDescription(`المدة : ${duration / 60000} دقائق`)
                   .setFooter(message.author.username, message.author.avatarURL);
                   message.guild.channels.find('name', room).send(giveEmbed).then(m => {
-                     let re = m.react('🎉');
+                     let re = m.react('??');
                      setTimeout(() => {
-                       let users = m.reactions.get("🎉").users;
+                       let users = m.reactions.get("??").users;
                        let list = users.array().filter(u => u.id !== m.author.id);
                        let gFilter = list[Math.floor(Math.random() * list.length) + 0];
                          if(users.size === 1) gFilter = '**لم يتم التحديد**';
@@ -101,18 +101,18 @@ client.on('message', function(message) {
     .setFooter("لو ان الابلاغ فيه مزح راح يتعرض صاحب الابلاغ لقوبات")
 message.channel.send(Rembed)
 message.channel.send("__Are you sure you want to send this to the Server owner??__").then(msg => {
-    msg.react("✅")
-    msg.react("❌")
-.then(() => msg.react('❌'))
-.then(() =>msg.react('✅'))
-let reaction1Filter = (reaction, user) => reaction.emoji.name === '✅' && user.id === message.author.id;
-let reaction2Filter = (reaction, user) => reaction.emoji.name === '❌' && user.id === message.author.id;
+    msg.react("?")
+    msg.react("?")
+.then(() => msg.react('?'))
+.then(() =>msg.react('?'))
+let reaction1Filter = (reaction, user) => reaction.emoji.name === '?' && user.id === message.author.id;
+let reaction2Filter = (reaction, user) => reaction.emoji.name === '?' && user.id === message.author.id;
 
 let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 12000 });
 let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });
 reaction1.on("collect", r => {
     message.guild.owner.send(Rembed)
-    message.reply("**# - Done! 🎇**");
+    message.reply("**# - Done! ??**");
 })
 reaction2.on("collect", r => {
     message.reply("**# - Canceled!**");
@@ -137,9 +137,9 @@ client.on('message', function(message) {
     if(message.content === '*cc') {
     if(message.member.hasPermission('MANAGE_ROLES')) {
     setInterval(function(){})
-    message.channel.send('يتم انشاء 50 لون انتضر | ▶️')
+    message.channel.send('يتم انشاء 50 لون انتضر | ??')
     }else{
-    message.channel.send('ما معاك البرمشن المطلوب |❌🚫')
+    message.channel.send('ما معاك البرمشن المطلوب |???')
     }
     }
     });
@@ -220,7 +220,7 @@ client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
   return channel.send(`**- Hello , ${member} :cocktail: **
 **       - You Are in a Big Community :dove: **
-  **              - Crezma, :blue_heart:**`) 
+  **              - KingDoms For Ever**`) 
 }).catch(console.error)
 })
 
@@ -244,7 +244,7 @@ if(!message.channel.guild) return;
 client.on('message', message => {
 var prefix = "*" // البريفكس
 if(message.content.startsWith(prefix +"server")){ // الامر
-  if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.reply(`**هذه الخاصية للادارة فقط** ❎ `)
+  if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.reply(`**هذه الخاصية للادارة فقط** ? `)
 if(!message.channel.guild) return message.reply(' ');
 const millis = new Date().getTime() - message.guild.createdAt.getTime();
 const now = new Date();
@@ -253,13 +253,13 @@ const days = millis / 1000 / 60 / 60 / 24;
 let roles = client.guilds.get(message.guild.id).roles.map(r => r.name);
 var embed  = new Discord.RichEmbed()
 .setAuthor(message.guild.name, message.guild.iconURL)
-.addField("**🆔 Server ID:**", message.guild.id,true)
-.addField("**📅 Created On**", message.guild.createdAt.toLocaleString(),true)
-.addField("**👑 Owned by**",`${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`)
-.addField("**👥 Members**",`[${message.guild.memberCount}]`,true)
-.addField('**💬 Channels **',`**${message.guild.channels.filter(m => m.type === 'text').size}**` + ' text | Voice  '+ `**${message.guild.channels.filter(m => m.type === 'voice').size}** `,true)
-.addField("**🌍 Others **" , message.guild.region,true)
-.addField("**🔐 Roles **",`**[${message.guild.roles.size}]** Role `,true)
+.addField("**?? Server ID:**", message.guild.id,true)
+.addField("**?? Created On**", message.guild.createdAt.toLocaleString(),true)
+.addField("**?? Owned by**",`${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`)
+.addField("**?? Members**",`[${message.guild.memberCount}]`,true)
+.addField('**?? Channels **',`**${message.guild.channels.filter(m => m.type === 'text').size}**` + ' text | Voice  '+ `**${message.guild.channels.filter(m => m.type === 'voice').size}** `,true)
+.addField("**?? Others **" , message.guild.region,true)
+.addField("**?? Roles **",`**[${message.guild.roles.size}]** Role `,true)
 .setColor('#000000')
 message.channel.sendEmbed(embed)
 
@@ -380,7 +380,7 @@ client.on('message', message => {
             .addField('``My ID``' , `[ ${client.user.id} ]` , true)
 			      .addField('``My Prefix``' , `[ - ]` , true)
 			      .addField('``My Language``' , `[ node.js ]` , true)
-			      .setFooter('By | @~  Somz 🍸#2891   ')
+			      .setFooter('By | @~  Somz ??#2891   ')
     })
 }
 });
@@ -561,9 +561,9 @@ Discord API: ${client.ping.toFixed(0)} ms\`\`\``);
 
 client.on('message',async message => {
   if(message.content.startsWith("*setv")) {
-  if(!message.guild.member(message.author).hasPermissions('MANAGE_CHANNELS')) return message.reply('❌ **ليس لديك الصلاحيات الكافية**');
-  if(!message.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return message.reply('❌ **ليس معي الصلاحيات الكافية**');
-  message.channel.send('✅| **تم عمل الروم بنجاح**');
+  if(!message.guild.member(message.author).hasPermissions('MANAGE_CHANNELS')) return message.reply('? **ليس لديك الصلاحيات الكافية**');
+  if(!message.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return message.reply('? **ليس معي الصلاحيات الكافية**');
+  message.channel.send('?| **تم عمل الروم بنجاح**');
   message.guild.createChannel(`Voice Online : [ ${message.guild.members.filter(m => m.voiceChannel).size} ]` , 'voice').then(c => {
     console.log(`Voice online channel setup for guild: \n ${message.guild.name}`);
     c.overwritePermissions(message.guild.id, {
@@ -655,7 +655,7 @@ client.on('message', message => {
        *ummute | ل فك الميوت عن الشخص
        *ping   | ل عرض سرعة استخدام البوت
        *setv   | ل عمل رووم ل عدد الاعضاء المتواجدين في الرومات الصوتيه
-                         [ مبرمج البوت @~  Somz 🍸#2891 ]
+                         [ مبرمج البوت @~  Somz ??#2891 ]
        **`);
 
     }
